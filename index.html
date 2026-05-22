@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخيار الأفضل - THE BEST CHOICE | تحضير الوجبات المنزلية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #D4896E;
+            --primary-dark: #C27050;
+            --secondary: #8B5A3C;
+            --light-bg: #FFF9F7;
+            --card-bg: rgba(255, 249, 247, 0.8);
+            --glass: rgba(255, 255, 255, 0.15);
+            --text-dark: #2C1810;
+            --text-light: #6B5449;
+            --accent: #E8A87C;
+            --success: #2ECC71;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFF9F7 0%, #FFF5F0 100%);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 249, 247, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 137, 110, 0.2);
+            padding: 1rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cart-btn {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 137, 110, 0.3);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 137, 110, 0.4);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            left: 10px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 3rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 1;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image-wrapper {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Section */
+        section {
+            margin: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .meal-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 137, 110, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meal-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .meal-image-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--light-bg), #FFF0E8);
+        }
+
+        .meal-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .meal-card:hover .meal-image-container img {
+            transform: scale(1.1);
+        }
+
+        .meal-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        .meal-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meal-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .meal-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            flex: 1;
+        }
+
+        .meal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .meal-price {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .price-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .price-currency {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .meal-rating {
+            display: flex;
+            gap: 0.3rem;
+            align-items: center;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 0.9rem;
+        }
+
+        .rating-text {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-left: 0.3rem;
+        }
+
+        .meal-actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .btn-order {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-order:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 137, 110, 0.4);
+        }
+
+        .btn-add {
+            display: none;
+        }
+
+        .btn-add:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Featured Section */
+        .featured {
+            background: linear-gradient(135deg, var(--glass), rgba(232, 168, 124, 0.1));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 137, 110, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .featured-text h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .featured-text p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-image {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+
+            .featured {
+                padding: 2rem;
+            }
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 137, 110, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(212, 137, 110, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--secondary), var(--primary-dark));
+            color: white;
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h5 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+            padding-left: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        /* Scroll animations */
+        .meal-card {
+            opacity: 0;
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        .meal-card:nth-child(1) { animation-delay: 0.1s; }
+        .meal-card:nth-child(2) { animation-delay: 0.2s; }
+        .meal-card:nth-child(3) { animation-delay: 0.3s; }
+        .meal-card:nth-child(4) { animation-delay: 0.4s; }
+        .meal-card:nth-child(5) { animation-delay: 0.5s; }
+        .meal-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .featured {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="شعارنا.png" alt="الخيار الأفضل">
+                <div>
+                    <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary); line-height: 1;"><span style="color: #2C7A3C;">الخيار</span> <span style="color: var(--primary);">THE BEST CHOICE</span></div>
+                    <div style="font-size: 0.8rem; color: var(--secondary); margin-top: 0.2rem;">The Best Choice</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#home">الرئيسية</a>
+                <a href="#menu">القائمة</a>
+                <a href="#offers">العروض</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+            <a href="https://wa.me/22232362223" target="_blank" class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">3</span>
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>أطباق شهية محضرة لأجلك بعناية</h1>
+                    <p>اطلب أطباقك المفضلة واحصل عليها محضرة بالمكونات الطازجة </p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary">
+                            <i class="fas fa-list"></i> شاهد القائمة
+                        </a>
+                        <a href="https://wa.me/22232362223?text=أرغب في معرفة مزيد عن الطلبات" target="_blank" class="btn btn-secondary">
+                            <i class="fas fa-phone"></i> اطلب الآن
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <img src="طاجين اديوك.jpeg" alt="Featured Dish" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="featured">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <h3>🌟 الطبق المميز اليوم</h3>
+                    <p>طاجين الحوت الفاخر - مزيج من أطايب البحار مع التوابل التقليدية الفريدة، مقدم بأفضل أشكاله وطعمه الممتاز. متوفر الآن بسعر مخصوص!</p>
+                    <a href="https://wa.me/22232362223?text=أرغب في مزيد من معلومات عن طاجين الحوت" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-heart"></i> أضف إلى المفضلة
+                    </a>
+                </div>
+                <div class="featured-image">
+                    <img src="طاجين الحوت.jpeg" alt="Featured" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Most Popular Section -->
+        <section id="menu">
+            <div class="section-header">
+                <h2>🔥 الأكثر طلباً</h2>
+                <p>أكثر الأطباق التي يختارها عملاؤنا الكرام</p>
+            </div>
+            <div class="cards-grid">
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="طاجين اللحم.jpeg" alt="طاجين اللحم" loading="lazy">
+                        <span class="meal-badge">الأكثر طلباً</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">طاجين اللحم</h3>
+                        <p class="meal-description">لحم طري مع توابل تقليدية وخضار طازة</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">250</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="طاجين الحوت.jpeg" alt="طاجين الحوت" loading="lazy">
+                        <span class="meal-badge">⭐ خاص</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">طاجين الحوت</h3>
+                        <p class="meal-description">أسماك طازة مع صلصة حارة وخضار مشوي</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">280</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="الكسكس التقليدي.jpeg" alt="الكسكس التقليدي" loading="lazy">
+                        <span class="meal-badge">🌾 كلاسيكي</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">الكسكس التقليدي</h3>
+                        <p class="meal-description">كسكس بالطريقة التقليدية مع الدجاج والخضار</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">200</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★☆</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="مارو الحوت.jpeg" alt="مارو الحوت" loading="lazy">
+                        <span class="meal-badge">🔥 جديد</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">مارو الحوت</h3>
+                        <p class="meal-description">حساء سمك غني بالنكهات البحرية الأصيلة</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">220</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="طاجين الفكلة.jpeg" alt="طاجين الفكلة" loading="lazy">
+                        <span class="meal-badge">🌟 ممتاز</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">طاجين الفكلة</h3>
+                        <p class="meal-description">دجاج بصلصة لذيذة وخضار منوعة</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">240</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="بسمتي بولت.jpeg" alt="بسمتي بولت" loading="lazy">
+                        <span class="meal-badge">🎉 عرض</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">بسمتي بولت</h3>
+                        <p class="meal-description">مزيج لذيذ من اللحم والخضار بسلة محمصة</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">180</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★☆</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Today's Offers Section -->
+        <section id="offers">
+            <div class="section-header">
+                <h2>📢 عروض اليوم</h2>
+                <p>احصل على أفضل الأسعار على أطباقنا المميزة</p>
+            </div>
+            <div class="cards-grid">
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="صلاد فروي.jpg" alt="صلاد فروي" loading="lazy">
+                        <span class="meal-badge">💰 خصم 20%</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">صلاد فروي</h3>
+                        <p class="meal-description">سلطة طازة مع فواكه موسمية ودريسنج خاص</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">120</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★☆</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="أردوف.jpeg" alt="أردوف" loading="lazy">
+                        <span class="meal-badge">💰 خصم 15%</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">أردوف</h3>
+                        <p class="meal-description">عجينة محشوة بلذيذة مع لحم وخضار</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">150</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="تراميز.jpeg" alt="تراميز" loading="lazy">
+                        <span class="meal-badge">💰 خصم 25%</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">تراميز</h3>
+                        <p class="meal-description">حلوى تقليدية شهيرة بالزبدة والعسل</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">100</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="كسكس الخالص.jpeg" alt="كسكس الخالص" loading="lazy">
+                        <span class="meal-badge">💰 خصم 10%</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">كسكس الخالص</h3>
+                        <p class="meal-description">كسكس عالي الجودة مع لحم مفروم طازة</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">210</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★☆</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="بسمتي سيمبل.jpeg" alt="بسمتي سيمبل" loading="lazy">
+                        <span class="meal-badge">💰 خصم 18%</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">بسمتي سيمبل</h3>
+                        <p class="meal-description">سلة محمصة بسيطة وشهية للغاية</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">140</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★☆</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-card">
+                    <div class="meal-image-container">
+                        <img src="طاجين الحوت (2).jpeg" alt="طاجين الحوت (2)" loading="lazy">
+                        <span class="meal-badge">💰 خصم 22%</span>
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">طاجين الحوت (2)</h3>
+                        <p class="meal-description">نسخة مميزة من طاجين الحوت الفاخر</p>
+                        <div class="meal-footer">
+                            <div class="meal-price">
+                                <span class="price-value">300</span>
+                                <span class="price-currency">ر.م</span>
+                            </div>
+                            <div class="meal-rating">
+                                <span class="stars">★★★★★</span>
+                            </div>
+                        </div>
+                        <div class="meal-actions">
+                            <button class="btn-order">اطلب الآن</button>
+                            <button class="btn-add">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section>
+            <div class="section-header">
+                <h2>🎯 خدماتنا المميزة</h2>
+                <p>نقدم أفضل الخدمات لراحتك وسعادتك</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h4>توصيل سريع</h4>
+                    <p>توصيل فوري إلى باب منزلك خلال 30 دقيقة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>مكونات طازة</h4>
+                    <p>نستخدم أفضل المكونات الطازة يومياً</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>متاح 24/7</h4>
+                    <p>خدمة العملاء متاحة على مدار الساعة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>جودة عالية</h4>
+                    <p>معايير صحية صارمة وطهاة محترفون</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h4>طرق دفع متعددة</h4>
+                    <p>ادفع نقداً أو ببطاقة أو محفظتك الرقمية</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h4>عروض خاصة</h4>
+                    <p>احصل على عروض وتخفيضات مميزة بشكل دوري</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h5>عن خدمتنا</h5>
+                <p>الخيار الأفضل هي خدمة متخصصة في توفير الأطباق المنزلية الرائعة على حسب الطلب بأعلى معايير الجودة والنظافة.
+                <div class="social-links">
+                    <a href="https://wa.me/22232362223" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h5>القائمة السريعة</h5>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#menu">القائمة</a></li>
+                    <li><a href="#offers">العروض</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>ساعات العمل</h5>
+                <ul>
+                    <li>الأحد - الخميس: 11:00 - 23:00</li>
+                    <li>الجمعة - السبت: 12:00 - 24:00</li>
+                    <li>نحن مفتوحون في جميع العطلات الرسمية</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>تواصل معنا</h5>
+                <ul>
+                    <li>
+                        <a href="https://wa.me/22232362223" target="_blank">
+                            <i class="fas fa-phone"></i> +222 32362223
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@lelou.com">
+                            <i class="fas fa-envelope"></i> info@lelou.com
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i> نواكشوط، موريتانيا
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 الخيار الأفضل - خدمة توفير الأطباق. جميع الحقوق محفوظة. | تصميم احترافي</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.btn-add').forEach(button => {
+            button.addEventListener('click', function() {
+                const cartBadge = document.querySelector('.cart-badge');
+                let count = parseInt(cartBadge.textContent);
+                cartBadge.textContent = count + 1;
+                
+                // Add animation effect
+                button.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Order button functionality
+        document.querySelectorAll('.btn-order').forEach(button => {
+            button.addEventListener('click', function() {
+                const mealName = this.closest('.meal-card').querySelector('.meal-name').textContent;
+                const phoneNumber = '22232362223';
+                const message = `أرغب في طلب: ${mealName}`;
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.meal-card, .service-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Mobile menu
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        mobileMenuBtn.addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Counter animation
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = Math.round(target);
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.round(current);
+                }
+            }, 20);
+        }
+
+        // Trigger animations on page load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.meal-card').forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
